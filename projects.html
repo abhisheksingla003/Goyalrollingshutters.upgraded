@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Projects – Goyal Rolling Shutters</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=DM+Sans:wght@300;400;500;600&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<!-- ═══════════ NAVBAR ═══════════ -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <div class="nav-logo" onclick="showPage('home')">
+      <div class="logo-icon">
+        <svg width="20" height="20" viewBox="0 0 20 20"><rect x="2" y="2" width="16" height="3" rx="1"/><rect x="2" y="7" width="16" height="3" rx="1"/><rect x="2" y="12" width="16" height="3" rx="1"/><rect x="2" y="17" width="10" height="1.5" rx="0.5"/></svg>
+      </div>
+      GOYAL <span>SHUTTERS</span>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a onclick="showPage('home')" id="nav-home">Home</a>
+      <a onclick="showPage('products')" id="nav-products">Products</a>
+      <a onclick="showPage('projects')" class="active" id="nav-projects">Projects</a>
+      <a onclick="showPage('about')" id="nav-about">About</a>
+      <a onclick="showPage('blog')" id="nav-blog">Resources</a>
+      <a onclick="showPage('contact')" id="nav-contact">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <div class="nav-phone">📞 +91 96540 55501</div>
+      <a class="btn btn-primary btn-sm" onclick="scrollToQuote()">Get Quote</a>
+    </div>
+    <div class="hamburger" onclick="toggleMobile()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a onclick="showPage('home');toggleMobile()">Home</a>
+  <a onclick="showPage('products');toggleMobile()">Products & Services</a>
+  <a onclick="showPage('projects');toggleMobile()">Projects</a>
+  <a onclick="showPage('about');toggleMobile()">About Us</a>
+  <a onclick="showPage('blog');toggleMobile()">Resources</a>
+  <a onclick="showPage('contact');toggleMobile()">Contact</a>
+  <div class="mobile-cta" style="display:flex;flex-direction:column;gap:10px;margin-top:16px;">
+    <a class="btn btn-primary" href="tel:+919876543210">📞 Call Now</a>
+    <a class="btn btn-outline" onclick="scrollToQuote();toggleMobile()">Get Quote</a>
+  </div>
+</div>
+
+<!-- WhatsApp Float -->
+<div class="whatsapp-float" onclick="window.open('https://wa.me/919876543210','_blank')" title="Chat on WhatsApp">💬</div>
+
+<!-- ═══════════ PROJECTS PAGE ═══════════ -->
+<div id="page-projects" class="page active">
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="page-header-inner">
+      <div class="breadcrumb">
+        <span onclick="showPage('home')">Home</span>
+        <span class="sep">›</span>
+        <span>Our Projects</span>
+      </div>
+      <h1 class="page-header-title">Showcase of Our<br>Excellence</h1>
+      <p class="page-header-sub">Over 500+ successful installations across residential, commercial, and industrial sectors. Each project tells a story of precision, quality, and customer satisfaction.</p>
+    </div>
+  </div>
+
+  <!-- PROJECT FILTERS -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="filter-tabs">
+        <button class="filter-tab active" onclick="filterProjects('all')">All Projects</button>
+        <button class="filter-tab" onclick="filterProjects('residential')">Residential</button>
+        <button class="filter-tab" onclick="filterProjects('commercial')">Commercial</button>
+        <button class="filter-tab" onclick="filterProjects('industrial')">Industrial</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS GRID -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="grid-3" id="projectsGrid">
+        <!-- Projects injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECT DETAIL MODAL (HIDDEN BY DEFAULT) -->
+  <div id="projectModal" class="modal hidden">
+    <div class="modal-overlay" onclick="closeProjectModal()"></div>
+    <div class="modal-content">
+      <div class="modal-close" onclick="closeProjectModal()">×</div>
+      <div id="projectDetailContent">
+        <!-- Project detail content injected by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- STATS SECTION -->
+  <section class="section" style="background:var(--secondary)">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:48px;">
+        <div class="tag">Our Track Record</div>
+        <h2 class="section-title">Numbers That Speak</h2>
+        <p class="section-sub" style="margin:12px auto 0;">Over a decade of delivering quality shutters across Mumbai and beyond.</p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-num">500+</div>
+          <div class="stat-label">Projects Completed</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">10+</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">98%</div>
+          <div class="stat-label">Customer Satisfaction</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">24/7</div>
+          <div class="stat-label">Support Available</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:48px;">
+        <div class="tag">Client Testimonials</div>
+        <h2 class="section-title">What Our Customers Say</h2>
+        <p class="section-sub" style="margin:12px auto 0;">Real feedback from real customers who've experienced our work firsthand.</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-text">"Excellent quality shutters installed for our showroom. The team was professional, punctual, and the finish is perfect. Highly recommended!"</div>
+          <div class="testi-author">
+            <div class="testi-name">Rajesh Kumar</div>
+            <div class="testi-role">Fashion Showroom Owner, Bandra</div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-text">"Got motorized shutters for our warehouse. The automation works flawlessly and the remote control is very convenient. Great service!"</div>
+          <div class="testi-author">
+            <div class="testi-name">Priya Sharma</div>
+            <div class="testi-role">Warehouse Manager, Andheri</div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-text">"Professional installation and excellent after-sales support. The shutters are sturdy and look great. Will definitely work with them again."</div>
+          <div class="testi-author">
+            <div class="testi-name">Amit Patel</div>
+            <div class="testi-role">Retail Store Owner, Dadar</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <div class="cta-banner">
+    <div class="container">
+      <h2>Ready to Start Your Project?</h2>
+      <p>Let's discuss your requirements and create something amazing together.</p>
+      <div class="cta-banner-actions">
+        <a href="tel:+919876543210" class="btn btn-outline-white btn-lg">📞 Call Now</a>
+        <a onclick="window.open('https://wa.me/919876543210','_blank')" class="btn btn-lg" style="background:white;color:var(--accent);">💬 WhatsApp Us</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- end projects page -->
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer id="siteFooter">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="logo-icon">
+            <svg width="20" height="20" viewBox="0 0 20 20"><rect x="2" y="2" width="16" height="3" rx="1"/><rect x="2" y="7" width="16" height="3" rx="1"/><rect x="2" y="12" width="16" height="3" rx="1"/><rect x="2" y="17" width="10" height="1.5" rx="0.5"/></svg>
+          </div>
+          GOYAL <span>SHUTTERS</span>
+        </div>
+        <p class="footer-desc">Custom-built rolling shutters for shops, homes and industrial units – installed with precision and built to last over 10+ years.</p>
+        <div class="social-row">
+          <div class="social-btn">📘</div>
+          <div class="social-btn">📸</div>
+          <div class="social-btn">🐦</div>
+          <div class="social-btn">▶️</div>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Products</div>
+        <div class="footer-links">
+          <a onclick="openProduct(0)">Manual Rolling Shutters</a>
+          <a onclick="openProduct(1)">Motorized Shutters</a>
+          <a onclick="openProduct(2)">Residential Shutters</a>
+          <a onclick="openProduct(3)">Commercial Shutters</a>
+          <a onclick="openProduct(4)">Industrial Shutters</a>
+          <a onclick="openProduct(5)">Parts & Accessories</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Company</div>
+        <div class="footer-links">
+          <a onclick="showPage('about')">About Us</a>
+          <a onclick="showPage('projects')">Our Projects</a>
+          <a onclick="showPage('blog')">Resources</a>
+          <a onclick="showPage('contact')">Contact</a>
+          <a>Careers</a>
+          <a>Privacy Policy</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <div class="footer-links" style="gap:14px;">
+          <div>
+            <p style="color:rgba(255,255,255,0.3);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;font-family:var(--font-sub);">Phone</p>
+            <a href="tel:+919654055501" style="color:var(--accent);font-size:15px;font-weight:600;">+91 96540 55501</a>
+          </div>
+          <div>
+            <p style="color:rgba(255,255,255,0.3);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;font-family:var(--font-sub);">Email</p>
+            <a href="mailto:info@goyalrollingshutters.com" style="color:rgba(255,255,255,0.65);font-size:13px;">info@goyalrollingshutters.com</a>
+          </div>
+          <div>
+            <p style="color:rgba(255,255,255,0.3);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;font-family:var(--font-sub);">Address</p>
+            <p style="color:rgba(255,255,255,255,0.65);font-size:13px;line-height:1.6;">C780 Shiv Vihar JJ Colony<br>Hastsal Uttam Nagar<br>New Delhi 110059</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2024 Goyal Rolling Shutters. All rights reserved.</p>
+      <div class="footer-legal">
+        <a>Privacy Policy</a>
+        <a>Terms of Service</a>
+        <a>Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us – Goyal Rolling Shutters</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=DM+Sans:wght@300;400;500;600&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<!-- ═══════════ NAVBAR ═══════════ -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <div class="nav-logo" onclick="showPage('home')">
+      <div class="logo-icon">
+        <svg width="20" height="20" viewBox="0 0 20 20"><rect x="2" y="2" width="16" height="3" rx="1"/><rect x="2" y="7" width="16" height="3" rx="1"/><rect x="2" y="12" width="16" height="3" rx="1"/><rect x="2" y="17" width="10" height="1.5" rx="0.5"/></svg>
+      </div>
+      GOYAL <span>SHUTTERS</span>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a onclick="showPage('home')" id="nav-home">Home</a>
+      <a onclick="showPage('products')" id="nav-products">Products</a>
+      <a onclick="showPage('projects')" id="nav-projects">Projects</a>
+      <a onclick="showPage('about')" id="nav-about">About</a>
+      <a onclick="showPage('blog')" id="nav-blog">Resources</a>
+      <a onclick="showPage('contact')" class="active" id="nav-contact">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <div class="nav-phone">📞 +91 96540 55501</div>
+      <a class="btn btn-primary btn-sm" onclick="scrollToQuote()">Get Quote</a>
+    </div>
+    <div class="hamburger" onclick="toggleMobile()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a onclick="showPage('home');toggleMobile()">Home</a>
+  <a onclick="showPage('products');toggleMobile()">Products & Services</a>
+  <a onclick="showPage('projects');toggleMobile()">Projects</a>
+  <a onclick="showPage('about');toggleMobile()">About Us</a>
+  <a onclick="showPage('blog');toggleMobile()">Resources</a>
+  <a onclick="showPage('contact');toggleMobile()">Contact</a>
+  <div class="mobile-cta" style="display:flex;flex-direction:column;gap:10px;margin-top:16px;">
+    <a class="btn btn-primary" href="tel:+919876543210">📞 Call Now</a>
+    <a class="btn btn-outline" onclick="scrollToQuote();toggleMobile()">Get Quote</a>
+  </div>
+</div>
+
+<!-- WhatsApp Float -->
+<div class="whatsapp-float" onclick="window.open('https://wa.me/919876543210','_blank')" title="Chat on WhatsApp">💬</div>
+
+<!-- ═══════════ CONTACT PAGE ═══════════ -->
+<div id="page-contact" class="page active">
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="page-header-inner">
+      <div class="breadcrumb">
+        <span onclick="showPage('home')">Home</span>
+        <span class="sep">›</span>
+        <span>Contact Us</span>
+      </div>
+      <h1 class="page-header-title">Let's Build Something<br>Amazing Together</h1>
+      <p class="page-header-sub">Ready to get your custom rolling shutter? Get in touch with our experts for a free consultation and quote.</p>
+    </div>
+  </div>
+
+  <!-- CONTACT GRID -->
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-form-section">
+          <div class="contact-form-header">
+            <div class="tag">Get In Touch</div>
+            <h2 class="section-title">Send Us a Message</h2>
+            <p class="section-sub">Fill out the form below and we'll get back to you within 24 hours with a detailed quote and consultation.</p>
+          </div>
+          <form class="contact-form" id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" required>
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number *</label>
+                <input type="tel" id="phone" name="phone" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email">
+              </div>
+              <div class="form-group">
+                <label for="location">Location/Area</label>
+                <input type="text" id="location" name="location" placeholder="e.g., Bandra, Andheri">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="shutterType">Type of Shutter Needed</label>
+              <select id="shutterType" name="shutterType">
+                <option value="">Select Type</option>
+                <option value="manual">Manual Rolling Shutter</option>
+                <option value="motorized">Motorized Shutter</option>
+                <option value="residential">Residential Shutter</option>
+                <option value="commercial">Commercial Shutter</option>
+                <option value="industrial">Industrial Shutter</option>
+                <option value="repair">Repair/Maintenance</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message/Details</label>
+              <textarea id="message" name="message" rows="4" placeholder="Please describe your requirements, dimensions, timeline, etc."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg" style="width:100%;">Send Message</button>
+          </form>
+        </div>
+        <div class="contact-info-section">
+          <div class="contact-info-card">
+            <div class="contact-info-icon">📞</div>
+            <div class="contact-info-content">
+              <div class="contact-info-title">Call Us</div>
+              <div class="contact-info-desc">Speak directly with our experts</div>
+              <a href="tel:+919654055501" class="contact-info-link">+91 96540 55501</a>
+            </div>
+          </div>
+          <div class="contact-info-card">
+            <div class="contact-info-icon">💬</div>
+            <div class="contact-info-content">
+              <div class="contact-info-title">WhatsApp</div>
+              <div class="contact-info-desc">Quick responses and photos</div>
+              <a onclick="window.open('https://wa.me/919654055501','_blank')" class="contact-info-link">Chat on WhatsApp</a>
+            </div>
+          </div>
+          <div class="contact-info-card">
+            <div class="contact-info-icon">📧</div>
+            <div class="contact-info-content">
+              <div class="contact-info-title">Email</div>
+            <div class="contact-info-desc">For detailed inquiries</div>
+              <a href="mailto:info@goyalrollingshutters.com" class="contact-info-link">info@goyalrollingshutters.com</a>
+            </div>
+          </div>
+          <div class="contact-info-card">
+            <div class="contact-info-icon">📍</div>
+            <div class="contact-info-content">
+              <div class="contact-info-title">Visit Us</div>
+              <div class="contact-info-desc">Our manufacturing facility</div>
+              <div class="contact-info-link">C780 Shiv Vihar JJ Colony<br>Hastsal Uttam Nagar<br>New Delhi 110059</div>
+            </div>
+          </div>
+          <div class="contact-hours">
+            <div class="contact-hours-title">Business Hours</div>
+            <div class="contact-hours-grid">
+              <div class="contact-hour">
+                <span class="day">Monday - Saturday</span>
+                <span class="time">9:00 AM - 7:00 PM</span>
+              </div>
+              <div class="contact-hour">
+                <span class="day">Sunday</span>
+                <span class="time">10:00 AM - 4:00 PM</span>
+              </div>
+              <div class="contact-hour">
+                <span class="day">Emergency Service</span>
+                <span class="time">24/7 Available</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP SECTION -->
+  <section class="section" style="background:var(--secondary)">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:48px;">
+        <div class="tag">Find Us</div>
+        <h2 class="section-title">Our Location</h2>
+        <p class="section-sub" style="margin:12px auto 0;">Located in Mumbai's industrial heart, easily accessible from all parts of the city.</p>
+      </div>
+      <div class="map-container">
+        <div class="map-placeholder">
+          <div class="map-icon">🗺️</div>
+          <p>Interactive Map</p>
+          <p style="font-size:14px;color:#666;margin-top:8px;">C780 Shiv Vihar JJ Colony<br>Hastsal Uttam Nagar<br>New Delhi 110059</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE AREAS -->
+  <section class="section">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:48px;">
+        <div class="tag">Service Areas</div>
+        <h2 class="section-title">We Serve All of Mumbai</h2>
+        <p class="section-sub" style="margin:12px auto 0;">Professional shutter installation and repair services across Mumbai and surrounding areas.</p>
+      </div>
+      <div class="areas-grid">
+        <div class="area-item">
+          <div class="area-name">South Mumbai</div>
+          <div class="area-locations">Colaba, Churchgate, Marine Drive, Nariman Point, Bandra, Juhu</div>
+        </div>
+        <div class="area-item">
+          <div class="area-name">Central Mumbai</div>
+          <div class="area-locations">Dadar, Parel, Lower Parel, Mahalaxmi, Worli, Prabhadevi</div>
+        </div>
+        <div class="area-item">
+          <div class="area-name">Western Suburbs</div>
+          <div class="area-locations">Andheri, Jogeshwari, Goregaon, Malad, Kandivali, Borivali</div>
+        </div>
+        <div class="area-item">
+          <div class="area-name">Eastern Suburbs</div>
+          <div class="area-locations">Ghatkopar, Vikhroli, Bhandup, Mulund, Thane, Navi Mumbai</div>
+        </div>
+        <div class="area-item">
+          <div class="area-name">Northern Areas</div>
+          <div class="area-locations">Vasai, Virar, Palghar, Mira Road, Bhayandar</div>
+        </div>
+        <div class="area-item">
+          <div class="area-name">Extended Coverage</div>
+          <div class="area-locations">Thane, Kalyan, Dombivli, Badlapur, Ambernath</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <div class="cta-banner">
+    <div class="container">
+      <h2>Ready to Get Started?</h2>
+      <p>Don't wait – contact us today for a free site visit and detailed quote.</p>
+      <div class="cta-banner-actions">
+        <a href="tel:+919876543210" class="btn btn-outline-white btn-lg">📞 Call Now</a>
+        <a onclick="window.open('https://wa.me/919876543210','_blank')" class="btn btn-lg" style="background:white;color:var(--accent);">💬 WhatsApp Us</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- end contact page -->
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer id="siteFooter">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="logo-icon">
+            <svg width="20" height="20" viewBox="0 0 20 20"><rect x="2" y="2" width="16" height="3" rx="1"/><rect x="2" y="7" width="16" height="3" rx="1"/><rect x="2" y="12" width="16" height="3" rx="1"/><rect x="2" y="17" width="10" height="1.5" rx="0.5"/></svg>
+          </div>
+          GOYAL <span>SHUTTERS</span>
+        </div>
+        <p class="footer-desc">Custom-built rolling shutters for shops, homes and industrial units – installed with precision and built to last over 10+ years.</p>
+        <div class="social-row">
+          <div class="social-btn">📘</div>
+          <div class="social-btn">📸</div>
+          <div class="social-btn">🐦</div>
+          <div class="social-btn">▶️</div>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Products</div>
+        <div class="footer-links">
+          <a onclick="openProduct(0)">Manual Rolling Shutters</a>
+          <a onclick="openProduct(1)">Motorized Shutters</a>
+          <a onclick="openProduct(2)">Residential Shutters</a>
+          <a onclick="openProduct(3)">Commercial Shutters</a>
+          <a onclick="openProduct(4)">Industrial Shutters</a>
+          <a onclick="openProduct(5)">Parts & Accessories</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Company</div>
+        <div class="footer-links">
+          <a onclick="showPage('about')">About Us</a>
+          <a onclick="showPage('projects')">Our Projects</a>
+          <a onclick="showPage('blog')">Resources</a>
+          <a onclick="showPage('contact')">Contact</a>
+          <a>Careers</a>
+          <a>Privacy Policy</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <div class="footer-links" style="gap:14px;">
+          <div>
+            <p style="color:rgba(255,255,255,0.3);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;font-family:var(--font-sub);">Phone</p>
+            <a href="tel:+919876543210" style="color:var(--accent);font-size:15px;font-weight:600;">+91 98765 43210</a>
+          </div>
+          <div>
+            <p style="color:rgba(255,255,255,0.3);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;font-family:var(--font-sub);">Email</p>
+            <a href="mailto:info@goyalrollingshutters.com" style="color:rgba(255,255,255,0.65);font-size:13px;">info@goyalrollingshutters.com</a>
+          </div>
+          <div>
+            <p style="color:rgba(255,255,255,0.3);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;font-family:var(--font-sub);">Address</p>
+            <p style="color:rgba(255,255,255,255,0.65);font-size:13px;line-height:1.6;">Industrial Area, Sector 5<br>Mumbai, Maharashtra 400001</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2024 Goyal Rolling Shutters. All rights reserved.</p>
+      <div class="footer-legal">
+        <a>Privacy Policy</a>
+        <a>Terms of Service</a>
+        <a>Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

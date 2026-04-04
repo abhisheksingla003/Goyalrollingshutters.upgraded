@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resources & Blog – Goyal Rolling Shutters</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=DM+Sans:wght@300;400;500;600&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<!-- ═══════════ NAVBAR ═══════════ -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <div class="nav-logo" onclick="showPage('home')">
+      <div class="logo-icon">
+        <svg width="20" height="20" viewBox="0 0 20 20"><rect x="2" y="2" width="16" height="3" rx="1"/><rect x="2" y="7" width="16" height="3" rx="1"/><rect x="2" y="12" width="16" height="3" rx="1"/><rect x="2" y="17" width="10" height="1.5" rx="0.5"/></svg>
+      </div>
+      GOYAL <span>SHUTTERS</span>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a onclick="showPage('home')" id="nav-home">Home</a>
+      <a onclick="showPage('products')" id="nav-products">Products</a>
+      <a onclick="showPage('projects')" id="nav-projects">Projects</a>
+      <a onclick="showPage('about')" id="nav-about">About</a>
+      <a onclick="showPage('blog')" class="active" id="nav-blog">Resources</a>
+      <a onclick="showPage('contact')" id="nav-contact">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <div class="nav-phone">📞 +91 96540 55501</div>
+      <a class="btn btn-primary btn-sm" onclick="scrollToQuote()">Get Quote</a>
+    </div>
+    <div class="hamburger" onclick="toggleMobile()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a onclick="showPage('home');toggleMobile()">Home</a>
+  <a onclick="showPage('products');toggleMobile()">Products & Services</a>
+  <a onclick="showPage('projects');toggleMobile()">Projects</a>
+  <a onclick="showPage('about');toggleMobile()">About Us</a>
+  <a onclick="showPage('blog');toggleMobile()">Resources</a>
+  <a onclick="showPage('contact');toggleMobile()">Contact</a>
+  <div class="mobile-cta" style="display:flex;flex-direction:column;gap:10px;margin-top:16px;">
+    <a class="btn btn-primary" href="tel:+919876543210">📞 Call Now</a>
+    <a class="btn btn-outline" onclick="scrollToQuote();toggleMobile()">Get Quote</a>
+  </div>
+</div>
+
+<!-- WhatsApp Float -->
+<div class="whatsapp-float" onclick="window.open('https://wa.me/919876543210','_blank')" title="Chat on WhatsApp">💬</div>
+
+<!-- ═══════════ BLOG PAGE ═══════════ -->
+<div id="page-blog" class="page active">
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="page-header-inner">
+      <div class="breadcrumb">
+        <span onclick="showPage('home')">Home</span>
+        <span class="sep">›</span>
+        <span>Resources</span>
+      </div>
+      <h1 class="page-header-title">Knowledge Hub for<br>Smart Shutter Decisions</h1>
+      <p class="page-header-sub">Expert insights, maintenance tips, and industry knowledge to help you make informed decisions about your rolling shutters.</p>
+    </div>
+  </div>
+
+  <!-- BLOG GRID -->
+  <section class="section">
+    <div class="container">
+      <div class="blog-grid" id="blogGrid">
+        <!-- Blog posts injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG DETAIL MODAL (HIDDEN BY DEFAULT) -->
+  <div id="blogModal" class="modal hidden">
+    <div class="modal-overlay" onclick="closeBlogModal()"></div>
+    <div class="modal-content">
+      <div class="modal-close" onclick="closeBlogModal()">×</div>
+      <div id="blogDetailContent">
+        <!-- Blog detail content injected by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ SECTION -->
+  <section class="section" style="background:var(--secondary)">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:48px;">
+        <div class="tag">Frequently Asked Questions</div>
+        <h2 class="section-title">Common Questions Answered</h2>
+        <p class="section-sub" style="margin:12px auto 0;">Get quick answers to the most common questions about rolling shutters.</p>
+      </div>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <div class="faq-question">How long do rolling shutters last?</div>
+          <div class="faq-answer">With proper maintenance, our shutters typically last 10-15 years. Premium materials and professional installation ensure longevity.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What's the difference between manual and motorized shutters?</div>
+          <div class="faq-answer">Manual shutters are operated by hand and are cost-effective. Motorized shutters offer convenience with remote control and can include safety features.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How much does a rolling shutter cost?</div>
+          <div class="faq-answer">Costs vary based on size, material, and type. Basic manual shutters start from ₹15,000, while premium motorized ones can range from ₹35,000-₹75,000.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Do you provide maintenance services?</div>
+          <div class="faq-answer">Yes, we offer annual maintenance contracts, emergency repairs, and spare parts. Regular maintenance ensures smooth operation and extends lifespan.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How long does installation take?</div>
+          <div class="faq-answer">Standard installations are completed within 2-3 days. Complex motorized installations may take 4-5 days depending on the requirements.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Can shutters be customized for specific requirements?</div>
+          <div class="faq-answer">Absolutely! Every shutter is custom-built for your exact measurements. We can accommodate special sizes, colors, and features as needed.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOWNLOADS SECTION -->
+  <section class="section">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:48px;">
+        <div class="tag">Free Resources</div>
+        <h2 class="section-title">Helpful Guides & Checklists</h2>
+        <p class="section-sub" style="margin:12px auto 0;">Download our free resources to help you make informed decisions about your shutter project.</p>
+      </div>
+      <div class="downloads-grid">
+        <div class="download-card">
+          <div class="download-icon">📋</div>
+          <div class="download-title">Shutter Buying Guide</div>
+          <div class="download-desc">Complete guide to choosing the right shutter for your needs, including types, materials, and cost factors.</div>
+          <a class="btn btn-outline btn-sm">Download PDF</a>
+        </div>
+        <div class="download-card">
+          <div class="download-icon">🔧</div>
+          <div class="download-title">Maintenance Checklist</div>
+          <div class="download-desc">Monthly and annual maintenance tasks to keep your shutters operating smoothly and extend their lifespan.</div>
+          <a class="btn btn-outline btn-sm">Download PDF</a>
+        </div>
+        <div class="download-card">
+          <div class="download-icon">📏</div>
+          <div class="download-title">Measurement Guide</div>
+          <div class="download-desc">Step-by-step instructions on how to accurately measure your opening for custom shutter fabrication.</div>
+          <a class="btn btn-outline btn-sm">Download PDF</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <div class="cta-banner">
+    <div class="container">
+      <h2>Still Have Questions?</h2>
+      <p>Our experts are here to help. Get personalized advice for your specific needs.</p>
+      <div class="cta-banner-actions">
+        <a href="tel:+919876543210" class="btn btn-outline-white btn-lg">📞 Call Now</a>
+        <a onclick="window.open('https://wa.me/919876543210','_blank')" class="btn btn-lg" style="background:white;color:var(--accent);">💬 WhatsApp Us</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- end blog page -->
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer id="siteFooter">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="logo-icon">
+            <svg width="20" height="20" viewBox="0 0 20 20"><rect x="2" y="2" width="16" height="3" rx="1"/><rect x="2" y="7" width="16" height="3" rx="1"/><rect x="2" y="12" width="16" height="3" rx="1"/><rect x="2" y="17" width="10" height="1.5" rx="0.5"/></svg>
+          </div>
+          GOYAL <span>SHUTTERS</span>
+        </div>
+        <p class="footer-desc">Custom-built rolling shutters for shops, homes and industrial units – installed with precision and built to last over 10+ years.</p>
+        <div class="social-row">
+          <div class="social-btn">📘</div>
+          <div class="social-btn">📸</div>
+          <div class="social-btn">🐦</div>
+          <div class="social-btn">▶️</div>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Products</div>
+        <div class="footer-links">
+          <a onclick="openProduct(0)">Manual Rolling Shutters</a>
+          <a onclick="openProduct(1)">Motorized Shutters</a>
+          <a onclick="openProduct(2)">Residential Shutters</a>
+          <a onclick="openProduct(3)">Commercial Shutters</a>
+          <a onclick="openProduct(4)">Industrial Shutters</a>
+          <a onclick="openProduct(5)">Parts & Accessories</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Company</div>
+        <div class="footer-links">
+          <a onclick="showPage('about')">About Us</a>
+          <a onclick="showPage('projects')">Our Projects</a>
+          <a onclick="showPage('blog')">Resources</a>
+          <a onclick="showPage('contact')">Contact</a>
+          <a>Careers</a>
+          <a>Privacy Policy</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <div class="footer-links" style="gap:14px;">
+          <div>
+            <p style="color:rgba(255,255,255,0.3);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;font-family:var(--font-sub);">Phone</p>
+            <a href="tel:+919654055501" style="color:var(--accent);font-size:15px;font-weight:600;">+91 96540 55501</a>
+          </div>
+          <div>
+            <p style="color:rgba(255,255,255,0.3);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;font-family:var(--font-sub);">Email</p>
+            <a href="mailto:info@goyalrollingshutters.com" style="color:rgba(255,255,255,0.65);font-size:13px;">info@goyalrollingshutters.com</a>
+          </div>
+          <div>
+            <p style="color:rgba(255,255,255,0.3);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;font-family:var(--font-sub);">Address</p>
+            <p style="color:rgba(255,255,255,255,0.65);font-size:13px;line-height:1.6;">C780 Shiv Vihar JJ Colony<br>Hastsal Uttam Nagar<br>New Delhi 110059</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2024 Goyal Rolling Shutters. All rights reserved.</p>
+      <div class="footer-legal">
+        <a>Privacy Policy</a>
+        <a>Terms of Service</a>
+        <a>Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
